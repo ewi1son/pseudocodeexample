@@ -60,31 +60,28 @@ Objects/Data Structures
             -inputs barcodes
                 -onRequestScan function
 */
-<code>
+
 Pseudo Code
-
-Start
-
 //Begin
 
-INIT()
+    INIT()
 
-SCM.requestMed(01-01-01)
-AutoPharm.requestReceived(01-01-01)
+    SCM.requestMed(01-01-01)
+    AutoPharm.requestReceived(01-01-01)
 
 
-if(AutoPharm.inventorySufficient = true)
-    Carousel.spinTo(01-01-01)
-    Printer.dispenseInfo
+    if(AutoPharm.inventorySufficient = true)
+        Carousel.spinTo(01-01-01)
+        Printer.dispenseInfo
     
-on(operator.scansMed)
-    if(barcodeCorrect)
-        AutoPharm.sendMessage("Accepted. Inventory updated")
-        display.showMessage
-        AutoPharm.updateInventory
+    on(operator.scansMed)
+        if(barcodeCorrect)
+            AutoPharm.sendMessage("Accepted. Inventory updated")
+            display.showMessage
+            AutoPharm.updateInventory
 
 //End
-</code>
+
 
 
 // Define Objects, Functions
