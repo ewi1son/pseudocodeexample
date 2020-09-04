@@ -1,3 +1,4 @@
+<code>
 Functionality (use case)- operator wants to pull correct medication for patient or location.
 
 Order is pushed from SCM
@@ -58,6 +59,8 @@ INIT()
 SCM.requestMed(01-01-01)
 AutoPharm.requestReceived(01-01-01)
 
+
+
 if(AutoPharm.inventorySufficient = true)
     Carousel.spinTo(01-01-01)
     Printer.dispenseInfo
@@ -115,4 +118,4 @@ if(barcodeCorrect)
         scansMed
         removesMed
 
-
+</code>
