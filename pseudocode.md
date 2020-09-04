@@ -1,26 +1,26 @@
 Functionality (use case)- operator wants to pull correct medication for patient or location.
 
-Order is pushed from SCM
-Is stock sufficient? (>= request)
-Print label
-Spin to corresponding row
-Operator scans barcode of medication
-Does barcode match barcode on file?
-Update inventory count
+    Order is pushed from SCM
+    Is stock sufficient? (>= request)
+    Print label
+    Spin to corresponding row
+    Operator scans barcode of medication
+    Does barcode match barcode on file?
+    Update inventory count
 
-Must: 
-    push from SCM 
-    match barcodes
-    update inventory
-    spin carousel
-    print labels
-Should:
-    check against local inventory
-    display message
-Could:
-    be speicific regarding pt info, critical low/stockouts
-Won't:
-    dispense without matching barcode
+    Must: 
+        push from SCM 
+        match barcodes
+        update inventory
+        spin carousel
+        print labels
+    Should:
+        check against local inventory
+        display message
+    Could:
+        be speicific regarding pt info, critical low/stockouts
+    Won't:
+        dispense without matching barcode
 
 
 /*
