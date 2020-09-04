@@ -1,4 +1,3 @@
-<code>
 Functionality (use case)- operator wants to pull correct medication for patient or location.
 
 Order is pushed from SCM
@@ -8,6 +7,21 @@ Spin to corresponding row
 Operator scans barcode of medication
 Does barcode match barcode on file?
 Update inventory count
+
+Must: 
+    push from SCM 
+    match barcodes
+    update inventory
+    spin carousel
+    print labels
+Should:
+    check against local inventory
+    display message
+Could:
+    be speicific regarding pt info, critical low/stockouts
+Won't:
+    dispense without matching barcode
+
 
 /*
 Objects/Data Structures
@@ -39,7 +53,6 @@ Objects/Data Structures
             -rows
                 -sections
                     -medications
-
         - Printer
             -prints labels
                 -onPrintLabel function
@@ -47,7 +60,7 @@ Objects/Data Structures
             -inputs barcodes
                 -onRequestScan function
 */
-
+<code>
 Pseudo Code
 
 Start
@@ -60,18 +73,18 @@ SCM.requestMed(01-01-01)
 AutoPharm.requestReceived(01-01-01)
 
 
-
 if(AutoPharm.inventorySufficient = true)
     Carousel.spinTo(01-01-01)
     Printer.dispenseInfo
-
-if(barcodeCorrect)
-    AutoPharm.sendMessage("Accepted. Inventory updated")
-    display.showMessage
-    AutoPharm.updateInventory
+    
+on(operator.scansMed)
+    if(barcodeCorrect)
+        AutoPharm.sendMessage("Accepted. Inventory updated")
+        display.showMessage
+        AutoPharm.updateInventory
 
 //End
-
+</code>
 
 
 // Define Objects, Functions
@@ -118,4 +131,4 @@ if(barcodeCorrect)
         scansMed
         removesMed
 
-</code>
+
